@@ -1,20 +1,25 @@
 // backend/server.js
-const productRoutes = require("./routes/products");
-
-require("dotenv").config();
-
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+require("dotenv").config();
 
+// routes
+const authRoutes = require("./routes/auth");
+const productRoutes = require("./routes/products");
+
+// init app
 const app = express();
 
-// Middlewares
+// middlewares（一定要在 routes 前）
 app.use(cors());
-app.use(express.json()); // 讓你可以讀取 JSON body
+app.use(express.json());
+
+// routes
+app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 
-// Health check（確認 server 有跑）
+// health check
 app.get("/", (req, res) => {
   res.json({ success: true, message: "API is running" });
 });

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "../App.css";
+import { authFetch } from "../utils/authFetch";
+
 
 export default function Admin() {
   const [products, setProducts] = useState([]);
@@ -31,9 +33,8 @@ export default function Admin() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:3000/api/products", {
+    authFetch("http://localhost:3000/api/products", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         ...formData,
         price: Number(formData.price),
@@ -59,7 +60,7 @@ export default function Admin() {
   const handleDelete = (id) => {
     if (!window.confirm("確定要刪除這個商品嗎？")) return;
 
-    fetch(`http://localhost:3000/api/products/${id}`, {
+    authFetch(`http://localhost:3000/api/products/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -103,9 +104,8 @@ export default function Admin() {
     const newDescription = prompt("商品描述", product.description || "");
     if (newDescription === null) return;
 
-    fetch(`http://localhost:3000/api/products/${product._id}`, {
+    authFetch(`http://localhost:3000/api/products/${product._id}`, {
       method: "PUT",
-      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name: newName,
         price: Number(newPrice),
