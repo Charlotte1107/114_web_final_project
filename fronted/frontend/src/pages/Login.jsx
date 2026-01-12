@@ -139,7 +139,7 @@ export default function Login({ onLogin }) {
           </div>
 
           {errorMessage && (
-            <div className="error-message">⚠️ {errorMessage}</div>
+            <div className="error-message"> {errorMessage}</div>
           )}
 
           <button
