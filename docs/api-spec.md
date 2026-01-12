@@ -203,7 +203,7 @@ Authorization: Bearer JWT_TOKEN
 --- 
 
 ## 三、權限說明（Authorization）
-|功能	|權限|
+|功能|權限|
 |---|---|
 |瀏覽商品	|所有人|
 |使用者註冊	|所有人|
