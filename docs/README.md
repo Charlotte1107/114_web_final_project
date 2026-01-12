@@ -33,7 +33,7 @@
 - React
 - React Router
 - Fetch API
-- CSS（無套件，純手寫）
+- CSS
 - Vite
 
 ### Backend（後端）
