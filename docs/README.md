@@ -57,15 +57,16 @@
 │  ├─ scripts          # 建立管理者帳號
 │  └─ server.js
 │
-├─ frontend
-│  ├─ src
-│  │  ├─ pages         # 各頁面（Home / Login / Products / Admin）
-│  │  ├─ components    # 共用元件（RequireAdmin）
-│  │  ├─ utils         # authFetch
-│  │  ├─ assets        # 圖片素材
-│  │  ├─ App.jsx
-│  │  └─ App.css
-│  └─ main.jsx
+├─fronted
+│   ├─ frontend
+│      ├─ src
+│      │  ├─ pages         # 各頁面（Home / Login / Products / Admin）
+│      │  ├─ components    # 共用元件（RequireAdmin）
+│      │  ├─ utils         # authFetch
+│      │  ├─ assets        # 圖片素材
+│      │  ├─ App.jsx
+│      │  └─ App.css
+│      └─ main.jsx
 │
 └─ docs
 ```
@@ -89,7 +90,7 @@ npm run dev
 ```
 ### 2.安裝前端
 ```bash
-cd frontend
+cd fronted/frontend
 npm install
 npm run dev
 ```
